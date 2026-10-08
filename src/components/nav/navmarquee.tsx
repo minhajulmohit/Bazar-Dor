@@ -2,7 +2,7 @@ import { TProduct } from "@/type";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
-const unitMap: Record<string, string> = {
+export const unitMap: Record<string, string> = {
   kg: "কেজি",
   litre: "লিটার",
   dozen: "ডজন",
@@ -14,22 +14,22 @@ const NavMarquee = async () => {
     "https://api.api-store.workers.dev/api/bazardor/products",
     { next: { revalidate: 600 } },
   );
-  const product = await res.json();
+  const products = await res.json();
 
   return (
     <div className="border-b border-b-slate-200 p-1">
       <MarqueeText direction="right" duration={15}>
         <div className="flex gap-6">
-          {product.map((p: TProduct) => (
+          {products.map((p: TProduct) => (
             <small key={p.id}>
               {p.image} {p.nameBn} {p.today.toLocaleString("bn-BD")} টাকা/
               {unitMap[p.unit]}{" "}
               <span
                 className={
                   p.change?.dir === "up"
-                    ? "text-green-600"
+                    ? "text-red-600"
                     : p.change?.dir === "down"
-                      ? "text-red-600"
+                      ? "text-green-600"
                       : "text-gray-500 font-extrabold"
                 }
               >
