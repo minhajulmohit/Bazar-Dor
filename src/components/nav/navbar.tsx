@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Date from "../date";
 import NavButtons from "./navbuttons";
 import NavItems from "./navitems";
@@ -10,9 +11,11 @@ const NavBar = () => {
         <div className="flex gap-2 items-center">
           <p className="bg-[#05893E] p-2 rounded-xl text-3xl">🛒</p>
           <div>
-            <p className="font-bold text-2xl">
-              বাজার <span className="text-[#05893E]">দর</span>
-            </p>
+            <Link href={"/"}>
+              <p className="font-bold text-2xl">
+                বাজার <span className="text-[#05893E]">দর</span>
+              </p>
+            </Link>
             <small>
               <Date />
             </small>

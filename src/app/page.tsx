@@ -5,7 +5,7 @@ import PriceIncreased from "@/components/home/priceincreased";
 
 export default function Home() {
   return (
-    <div className="bg-[#f0f5f0]">
+    <div>
       <Hero />
       <PriceIncreased />
       <PriceDecreased />

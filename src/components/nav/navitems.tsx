@@ -1,4 +1,5 @@
 import { TNav } from "@/type";
+import Link from "next/link";
 
 const NavItems = async () => {
   const res = await fetch(
@@ -10,9 +11,9 @@ const NavItems = async () => {
   return (
     <div className="flex gap-5 border-y border-y-slate-200 py-3 items-center justify-center">
       {navItem.map((n: TNav) => (
-        <small className="" key={n.id}>
+        <Link href={`/category/${n.slug} `} className="" key={n.slug}>
           {n.icon} {n.nameBn}
-        </small>
+        </Link>
       ))}
     </div>
   );

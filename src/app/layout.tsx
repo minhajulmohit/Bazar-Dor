@@ -17,12 +17,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
+      data-theme="light"
       className={`${NotoSansBengali.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col ">
         <NavBar />
-
-        {children}
+        <div className="bg-[#f0f5f0]"> {children}</div>
       </body>
     </html>
   );
