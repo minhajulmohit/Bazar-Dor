@@ -24,10 +24,23 @@ const NavBar = () => {
         </div>
         <NavButtons />
       </div>
-      <Suspense>
+      <Suspense
+        fallback={
+          <div className="py-2 text-center">ক্যাটাগরি লোড হচ্ছে...</div>
+        }
+      >
         <NavItems />
       </Suspense>
-      <NavMarquee />
+
+      <Suspense
+        fallback={
+          <div className="border-b border-b-slate-200 p-2">
+            বাজারদর লোড হচ্ছে...
+          </div>
+        }
+      >
+        <NavMarquee />
+      </Suspense>
     </div>
   );
 };
