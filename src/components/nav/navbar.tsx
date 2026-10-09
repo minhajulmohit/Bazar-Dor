@@ -3,6 +3,7 @@ import Date from "../date";
 import NavButtons from "./navbuttons";
 import NavItems from "./navitems";
 import NavMarquee from "./navmarquee";
+import { Suspense } from "react";
 
 const NavBar = () => {
   return (
@@ -23,7 +24,9 @@ const NavBar = () => {
         </div>
         <NavButtons />
       </div>
-      <NavItems />
+      <Suspense>
+        <NavItems />
+      </Suspense>
       <NavMarquee />
     </div>
   );
