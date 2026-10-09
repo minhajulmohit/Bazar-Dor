@@ -1,12 +1,11 @@
 "use client";
 
 const Date = () => {
-  const today = new globalThis.Date();
-  const date = today.toLocaleDateString("bn-BD", {
+  const formattedDate = new globalThis.Date().toLocaleDateString("bn-BD", {
     dateStyle: "full",
   });
 
-  return <>{date}</>;
+  return <span>{formattedDate}</span>;
 };
 
 export default Date;

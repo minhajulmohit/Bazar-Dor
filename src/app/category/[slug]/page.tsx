@@ -2,6 +2,7 @@ import CategoryItems from "@/components/category/categoryitems";
 
 import TopHeader from "@/components/category/topheader";
 import { TNav, TProduct } from "@/type";
+import { notFound } from "next/navigation";
 
 const categoryPage = async ({
   params,
@@ -20,6 +21,11 @@ const categoryPage = async ({
     `https://api.api-store.workers.dev/api/bazardor/categories/${slug}`,
   );
   const category: TNav = await res2.json();
+
+  if (!singleCategoryProducts) {
+    notFound();
+  }
+
   return (
     <div>
       <TopHeader

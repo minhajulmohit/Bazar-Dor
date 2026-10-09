@@ -21,7 +21,7 @@ const NavItems = () => {
   }, []);
 
   return (
-    <div className="flex gap-5 border-y border-y-slate-200 py-3 items-center justify-center">
+    <div className="flex gap-5 border-y border-y-slate-200 py-1 items-center justify-center">
       {navItems.map((n: TNav) => {
         const isActive = pathname === `/category/${n.slug}`;
 
