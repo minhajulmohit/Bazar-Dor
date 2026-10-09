@@ -9,7 +9,7 @@ const AllProducts = async () => {
   const products = await res.json();
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-10 scroll-mt-12" id="allProducts">
       <h1 className="font-extrabold text-xl mb-3">
         সব পণ্য <br />
         <small className="font-normal text-[12px]">

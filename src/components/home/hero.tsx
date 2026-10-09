@@ -17,9 +17,11 @@ const Hero = () => {
           বিস্তারিত, গড়, সর্বনিম্ন-সর্বাধিক <br /> এবং দামের পরিবর্তন এক
           জায়গায়।
         </small>
-        <button className="bg-[#05893E] py-1 px-2 rounded-[5px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_10px_#05893E]">
-          <small>সব পণ্য দেখুন</small>
-        </button>
+        <a href="#allProducts">
+          <button className="bg-[#05893E] py-1 px-2 rounded-[5px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_10px_#05893E]">
+            <small>সব পণ্য দেখুন</small>
+          </button>
+        </a>
       </div>
       <Image className="h-60 w-60" src={HeroImage} alt="হিরো ইমেজ" />
     </div>

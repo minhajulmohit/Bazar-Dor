@@ -1,5 +1,5 @@
 import CategoryItems from "@/components/category/categoryitems";
-import SortingPart from "@/components/category/sortingpart";
+
 import TopHeader from "@/components/category/topheader";
 import { TNav, TProduct } from "@/type";
 
@@ -26,7 +26,7 @@ const categoryPage = async ({
         category={category}
         singleCategoryProducts={singleCategoryProducts}
       />
-      <SortingPart />
+
       <CategoryItems singleCategoryProducts={singleCategoryProducts} />
     </div>
   );
