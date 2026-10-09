@@ -1,4 +1,4 @@
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 
 const DetailPageMarkets = ({ product }: { product: TProduct }) => {
   const markets = product.markets ?? [];

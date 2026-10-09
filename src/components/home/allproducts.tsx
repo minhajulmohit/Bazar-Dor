@@ -1,10 +1,9 @@
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 import ProductCard from "../cards/productcard";
 
 const AllProducts = async () => {
   const res = await fetch(
     "https://api.api-store.workers.dev/api/bazardor/products",
-    { next: { revalidate: 600 } },
   );
   const products = await res.json();
 

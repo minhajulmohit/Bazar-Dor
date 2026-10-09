@@ -1,4 +1,4 @@
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 import { unitMap } from "../nav/navmarquee";
 
 const DetailPageTopSection = ({ product }: { product: TProduct }) => {

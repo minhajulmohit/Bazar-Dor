@@ -1,4 +1,4 @@
-import { TNav, TProduct } from "@/type";
+import { TNav, TProduct } from "@/types";
 
 type TTopHeaderProps = {
   category: TNav;

@@ -1,4 +1,4 @@
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 import MarqueeText from "react-marquee-text";
 import "react-marquee-text/dist/styles.css";
 
@@ -12,7 +12,7 @@ export const unitMap: Record<string, string> = {
 const NavMarquee = async () => {
   const res = await fetch(
     "https://api.api-store.workers.dev/api/bazardor/products",
-    { next: { revalidate: 600 } },
+  
   );
   const products = await res.json();
 

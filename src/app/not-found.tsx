@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { Home } from "lucide-react";
 
@@ -6,7 +7,6 @@ export default function NotFound() {
     <main className="min-h-[80vh] flex items-center justify-center bg-[#f4f8f5] px-4 py-12">
       <div className="w-full max-w-5xl rounded-3xl border border-[#e0ebe3] bg-white p-6 shadow-sm sm:p-10 lg:p-14">
         <div className="flex flex-col items-center gap-10 md:flex-row md:gap-14">
-          {/* 404 Illustration */}
           <div className="flex w-full flex-col items-center justify-center md:w-1/2">
             <div className="relative flex items-center justify-center">
               <span className="text-[140px] font-black leading-none tracking-tighter text-[#05893E] sm:text-[190px]">
@@ -17,7 +17,7 @@ export default function NotFound() {
             <div className="mt-5 h-1.5 w-3/4 rounded-full bg-[#e1f0e5]" />
           </div>
 
-          {/* Error Message */}
+    
           <div className="w-full text-center md:w-1/2 md:text-left">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[#05893E]">
               Page Not Found

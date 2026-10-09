@@ -1,6 +1,6 @@
 import DetailPageBottomSection from "@/components/product/detailpagebottomsec";
 import DetailPageTopSection from "@/components/product/detailpagetopsec";
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 import { notFound } from "next/navigation";
 
 const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
@@ -9,8 +9,14 @@ const DetailsPage = async ({ params }: { params: Promise<{ id: string }> }) => {
   const res = await fetch(
     `https://api.api-store.workers.dev/api/bazardor/products/${id}`,
   );
-  const product: TProduct = await res.json();
 
+  if (res.status === 404) {
+    notFound();
+  }
+  if (!res.ok) {
+    throw new Error("Failed to fetch product details");
+  }
+  const product: TProduct = await res.json();
   if (!product) {
     notFound();
   }

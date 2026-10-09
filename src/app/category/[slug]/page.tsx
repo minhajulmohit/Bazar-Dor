@@ -1,7 +1,7 @@
 import CategoryItems from "@/components/category/categoryitems";
 
 import TopHeader from "@/components/category/topheader";
-import { TNav, TProduct } from "@/type";
+import { TNav, TProduct } from "@/types";
 import { notFound } from "next/navigation";
 
 const categoryPage = async ({

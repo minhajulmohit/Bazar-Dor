@@ -1,5 +1,5 @@
 "use client";
-import { TProduct } from "@/type";
+import { TProduct } from "@/types";
 import ProductCard from "../cards/productcard";
 import { useState } from "react";
 import SortingPart from "./sortingpart";
