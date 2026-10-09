@@ -3,6 +3,7 @@ import Hero from "@/components/home/hero";
 import PriceDecreased from "@/components/home/pricedecreased";
 import PriceIncreased from "@/components/home/priceincreased";
 
+
 export default function Home() {
   return (
     <div>
@@ -10,6 +11,7 @@ export default function Home() {
       <PriceIncreased />
       <PriceDecreased />
       <AllProducts />
+     
     </div>
   );
 }
