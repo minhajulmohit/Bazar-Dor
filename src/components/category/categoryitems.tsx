@@ -21,7 +21,7 @@ const CategoryItems = ({ singleCategoryProducts }: TTopHeaderProps) => {
   });
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-3 sm:px-4">
       <SortingPart sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
       <p className="text-slate-500 mb-4">
@@ -29,7 +29,7 @@ const CategoryItems = ({ singleCategoryProducts }: TTopHeaderProps) => {
         দেখানো হচ্ছে
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5">
         {sortedProducts.map((product) => (
           <ProductCard key={product.id} p={product} />
         ))}

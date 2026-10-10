@@ -20,17 +20,17 @@ const NavButtons = () => {
 
   if (!session?.user) {
     return (
-      <div className="flex gap-4">
+      <div className="flex shrink-0 items-center gap-1 sm:gap-2">
         <Link
           href="/signin"
-          className="py-1 px-2 rounded-[5px] transition-all duration-300 hover:-translate-y-0.5"
+          className="whitespace-nowrap rounded-md px-2 py-1.5 text-xs sm:px-3 sm:py-2 sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
         >
           <small>সাইন ইন</small>
         </Link>
 
         <Link
           href="/signup"
-          className="bg-[#05893E] py-1 px-2 rounded-[5px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_15px_#05893E]"
+          className="bg-[#05893E] whitespace-nowrap rounded-md px-2 py-1.5 text-xs sm:px-3 sm:py-2 sm:text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_15px_#05893E]"
         >
           <small>সাইন আপ</small>
         </Link>

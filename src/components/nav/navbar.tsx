@@ -8,16 +8,18 @@ import { Suspense } from "react";
 const NavBar = () => {
   return (
     <div>
-      <div className="container mx-auto my-2 flex justify-between items-center">
+      <div className="container mx-auto my-2 flex items-center justify-between gap-1 px-2 sm:gap-3 sm:px-4">
         <div className="flex gap-2 items-center">
-          <p className="bg-[#05893E] p-2 rounded-xl text-3xl">🛒</p>
+          <p className="bg-[#05893E] p-2 rounded-xl sm:text-2xl md:text-3xl">
+            🛒
+          </p>
           <div>
             <Link href={"/"}>
-              <p className="font-bold text-2xl">
+              <p className="font-bold sm:text-2xl md:text-2xl">
                 বাজার <span className="text-[#05893E]">দর</span>
               </p>
             </Link>
-            <small>
+            <small className="text-[9px] sm:text-[12px] md:text-[15px]">
               <Date />
             </small>
           </div>

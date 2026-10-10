@@ -3,8 +3,8 @@ import { unitMap } from "../nav/navmarquee";
 
 const DetailPageTopSection = ({ product }: { product: TProduct }) => {
   return (
-    <div className="container mx-auto bg-white p-3 border border-slate-300 rounded-xl my-5 flex justify-between items-center">
-      <div className="flex items-center gap-2">
+    <div className="container mx-auto my-4 flex flex-col items-stretch gap-4 rounded-xl border border-slate-300 bg-white p-3 sm:my-5 sm:p-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex min-w-0 items-center gap-2">
         <p className="text-4xl bg-[#f0f5f0] p-3 rounded-xl">{product.image}</p>
         <div className="flex flex-col">
           <h1 className="font-bold text-xl">{product.nameBn}</h1>
@@ -37,9 +37,9 @@ const DetailPageTopSection = ({ product }: { product: TProduct }) => {
           </small>
         </div>
       </div>
-      <div className="bg-[#f0f5f0] flex flex-col items-center gap-1 p-3 rounded-xl">
+      <div className="flex w-full flex-col items-center gap-1 rounded-xl bg-[#f0f5f0] p-3 sm:w-auto sm:min-w-40">
         <small className="text-slate-500">আজকের দাম</small>
-        <h1 className="font-bold text-3xl">
+        <h1 className="text-2xl font-bold sm:text-3xl">
           {product.today.toLocaleString("bn-BD")}
         </h1>
         <small className="text-slate-500">টাকা/{unitMap[product.unit]}</small>

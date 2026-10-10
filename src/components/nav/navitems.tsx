@@ -21,7 +21,7 @@ const NavItems = () => {
   }, []);
 
   return (
-    <div className="flex gap-5 border-y border-y-slate-200 py-1 items-center justify-center">
+    <div className="flex items-center gap-2 overflow-x-auto border-y border-y-slate-200 px-3 py-2 sm:justify-center sm:gap-3">
       {navItems.map((n: TNav) => {
         const isActive = pathname === `/category/${n.slug}`;
 
@@ -29,7 +29,7 @@ const NavItems = () => {
           <Link
             key={n.slug}
             href={`/category/${n.slug}`}
-            className={`px-4 py-2 rounded-lg transition-colors ${
+            className={`shrink-0 whitespace-nowrap px-3 py-2 text-sm rounded-lg transition-colors ${
               isActive
                 ? "bg-green-600 text-primary-content font-bold"
                 : "hover:bg-base-200"

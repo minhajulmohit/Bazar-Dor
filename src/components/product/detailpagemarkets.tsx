@@ -10,8 +10,8 @@ const DetailPageMarkets = ({ product }: { product: TProduct }) => {
   return (
     <div className="">
       <h2 className="font-bold mb-3 mt-10">বাজারভিত্তিক আজকের দাম</h2>
-      <div className="overflow-x-auto rounded-box border border-slate-300">
-        <table className="table">
+      <div className="max-w-full overflow-x-auto rounded-box border border-slate-300">
+        <table className="table w-full min-w-[600px]">
           <tbody className="">
             <tr className="text-slate-500 border-b border-b-slate-400">
               <th className="font-normal px-4 py-2">বাজার</th>

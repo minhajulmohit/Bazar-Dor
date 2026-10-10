@@ -12,11 +12,11 @@ const PriceDecreased = async () => {
     .slice(0, 6);
 
   return (
-    <div className="container mx-auto mt-10">
+    <div className="container mx-auto mt-6 sm:mt-10 px-3 sm:px-4">
       <h1 className="font-extrabold text-xl mb-3">
         <span className="text-green-600">▼</span> আজ দাম কমেছে
       </h1>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 min-[400px]:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
         {filterHighPriceProducts.map((p: TProduct) => (
           <div key={p.id}>
             <ProductCard p={p} />
