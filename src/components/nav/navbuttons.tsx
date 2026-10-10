@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
+import toast from "react-hot-toast";
 
 const NavButtons = () => {
   const { data: session, isPending } = authClient.useSession();
@@ -12,7 +13,7 @@ const NavButtons = () => {
     const { error } = await authClient.signOut();
 
     if (error) return;
-
+    toast.success("সাইন আউট হচ্ছে");
     router.push("/signin");
     router.refresh();
   };

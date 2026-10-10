@@ -11,7 +11,7 @@ const DetailPageTopSection = ({ product }: { product: TProduct }) => {
           <small className="text-slate-500 leading-3 text-[12px]font-bold">
             প্রতি {unitMap[product.unit]} • {product.categoryNameBn}
           </small>
-          <small className="mt-3">
+          <small className="mt-1">
             গতকালেরর তুলনায় আজ দাম{" "}
             {product.change?.dir === "up" ? (
               <>

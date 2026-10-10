@@ -1,10 +1,13 @@
 "use client";
 
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { authClient } from "../../lib/auth-client";
 import toast from "react-hot-toast";
+import Link from "next/link";
 
-const signUp = () => {
+const SignUp = () => {
+  const router = useRouter();
+
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -17,7 +20,11 @@ const signUp = () => {
     });
     if (data) {
       toast.success("অ্যাকাউন্ট তৈরি সফল হয়েছে");
-      redirect("/signin");
+      setTimeout(() => {
+        router.push("/signin");
+      }, 1500);
+
+      return;
     }
     if (error) {
       if (error) {
@@ -157,11 +164,22 @@ const signUp = () => {
               </svg>
               গিটহাব দিয়ে লগইন করুন
             </button>
+            <p className="text-center">
+              অ্যাকাউন্ট আছে?{" "}
+              <Link href={"/signin"}>
+                <span className="text-green-600">সাইন ইন করুন</span>
+              </Link>{" "}
+            </p>
           </div>
         </fieldset>
+        <Link href={"/"}>
+          <p className="text-center my-4 text-slate-500">
+            ← হোম পেজে ফিরে জান{" "}
+          </p>
+        </Link>
       </form>
     </div>
   );
 };
 
-export default signUp;
+export default SignUp;

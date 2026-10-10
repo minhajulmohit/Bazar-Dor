@@ -2,7 +2,8 @@
 import type { FormEvent, MouseEvent } from "react";
 import { authClient } from "../../lib/auth-client";
 import toast from "react-hot-toast";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface SignInCredentials {
   email: string;
@@ -15,6 +16,8 @@ interface SignInAuthResponse {
 }
 
 const SignInPage = () => {
+  const router = useRouter();
+
   const onSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -24,11 +27,14 @@ const SignInPage = () => {
     const { data, error }: SignInAuthResponse = await authClient.signIn.email({
       email: user.email as string,
       password: user.password as string,
-      callbackURL: "/",
-    });
+     });
     if (data) {
       toast.success("সাইন ইন সফল হয়েছে");
-      redirect("/signin");
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
+
+      return;
     }
     if (error) {
       const errorMessage =
@@ -174,8 +180,19 @@ const SignInPage = () => {
               </svg>
               গিটহাব দিয়ে লগইন করুন
             </button>
+            <p className="text-center">
+              অ্যাকাউন্ট নেই?{" "}
+              <Link href={"/signup"}>
+                <span className="text-green-600">সাইন আপ করুন</span>
+              </Link>{" "}
+            </p>
           </div>
         </fieldset>
+        <Link href={"/"}>
+          <p className="text-center my-4 text-slate-500">
+            ← হোম পেজে ফিরে জান{" "}
+          </p>
+        </Link>
       </form>
     </div>
   );
