@@ -30,7 +30,7 @@ const Hero = () => {
 
         <div className="flex w-full shrink-0 justify-center md:w-auto">
           <Image
-            className="h-auto w-full max-w-[180px] object-contain sm:max-w-[220px] md:max-w-[260px]"
+            className="h-auto w-full max-w-45 object-contain sm:max-w-55 md:max-w-65"
             src={HeroImage}
             alt="বাজারের পণ্য"
             priority

@@ -57,7 +57,7 @@ const NavButtons = () => {
         onClick={() => setIsOpen((prev) => !prev)}
         aria-label="ব্যবহারকারীর মেনু"
         aria-expanded={isOpen}
-        className="flex max-w-[150px] items-center gap-2 rounded-full p-1 transition hover:bg-slate-100 sm:max-w-[220px] sm:pr-3"
+        className="flex max-w-37.5 items-center gap-2 rounded-full p-1 transition hover:bg-slate-100 sm:max-w-55 sm:pr-3"
       >
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#05893E] text-base font-bold text-white">
           {firstLetter}
@@ -77,7 +77,7 @@ const NavButtons = () => {
       >
         <li className="pointer-events-none">
           <div className="flex flex-col items-start gap-1 py-3">
-            <span className="max-w-full break-words font-bold text-slate-800">
+            <span className="max-w-full wrap-break-word font-bold text-slate-800">
               {user.name}
             </span>
             <span className="max-w-full break-all text-xs text-slate-500">
@@ -102,7 +102,7 @@ const NavButtons = () => {
           <button
             type="button"
             onClick={handleSignOut}
-            className="py-3 text-red-600 hover:bg-red-50"
+            className="py-2 px-3 text-red-600 hover:bg-red-100 rounded-xl"
           >
             ↩ সাইন আউট
           </button>

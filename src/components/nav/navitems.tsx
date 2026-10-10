@@ -35,7 +35,7 @@ const NavItems = () => {
       aria-label="পণ্যের ক্যাটাগরি"
       className="w-full min-w-0 border-y border-slate-200 bg-white"
     >
-      <div className="mx-auto flex w-full max-w-[1280px] min-w-0 items-center gap-2 overflow-x-auto px-3 py-2 sm:justify-center sm:gap-3 sm:px-5">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 items-center gap-2 overflow-x-auto px-3 py-2 sm:justify-center sm:gap-3 sm:px-5">
         {navItems.map((item) => {
           const isActive = pathname === `/category/${item.slug}`;
 

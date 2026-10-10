@@ -4,7 +4,7 @@ type CategorySkeletonProps = {
 
 const CategorySkeleton = ({ count = 6 }: CategorySkeletonProps) => {
   return (
-    <div className="mx-auto w-full max-w-[1280px] min-w-0 px-3 sm:px-5">
+    <div className="mx-auto w-full max-w-7xl min-w-0 px-3 sm:px-5">
       <div className="my-4 flex min-w-0 items-center gap-3 rounded-xl border border-slate-300 bg-white p-3 sm:my-7 sm:p-4">
         <div className="h-14 w-14 shrink-0 animate-pulse rounded-xl bg-[#f0f5f0] sm:h-16 sm:w-16" />
 

@@ -9,7 +9,7 @@ import NavMarquee from "./navmarquee";
 const NavBar = () => {
   return (
     <div className="w-full min-w-0 bg-white">
-      <div className="mx-auto flex w-full max-w-[1280px] min-w-0 items-center justify-between gap-2 px-3 py-3 sm:px-5 md:gap-4">
+      <div className="mx-auto flex w-full max-w-7xl min-w-0 items-center justify-between gap-2 px-3 py-3 sm:px-5 md:gap-4">
         <Link href="/" className="flex min-w-0 shrink items-center gap-2">
           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#05893E] text-xl sm:h-12 sm:w-12 sm:text-2xl">
             🛒

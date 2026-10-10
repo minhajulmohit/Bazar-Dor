@@ -40,7 +40,7 @@ const ProfilePage = () => {
           </div>
 
           <div className="min-w-0">
-            <h1 className="text-2xl sm:text-3xl font-bold break-words">
+            <h1 className="text-2xl sm:text-3xl font-bold wrap-break-word">
               {user.name}
             </h1>
             <p className="text-sm sm:text-base text-base-content/60 break-all mt-1">

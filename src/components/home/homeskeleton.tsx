@@ -4,7 +4,7 @@ type ProductSkeletonProps = {
 
 const ProductSkeleton = ({ count = 6 }: ProductSkeletonProps) => {
   return (
-    <div className="mx-auto w-full max-w-[1280px] min-w-0 px-3 sm:px-5">
+    <div className="mx-auto w-full max-w-7xl min-w-0 px-3 sm:px-5">
       <div className="mb-3 h-7 w-44 animate-pulse rounded-md bg-slate-200" />
 
       <div className="grid grid-cols-1 gap-3 min-[360px]:grid-cols-2 sm:gap-4 lg:grid-cols-3 xl:grid-cols-4">

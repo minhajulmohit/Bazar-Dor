@@ -11,7 +11,7 @@ const DetailPageBottomSection = ({ product }: { product: TProduct }) => {
   );
 
   return (
-    <div className="mx-auto w-full max-w-[1280px] min-w-0 rounded-xl border border-slate-300 bg-white p-3 sm:p-5">
+    <div className="mx-auto w-full max-w-7xl min-w-0 rounded-xl border border-slate-300 bg-white p-3 sm:p-5">
       <h2 className="font-bold">দামের সারসংক্ষেপ</h2>
       <div className="my-4 grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         <div className="border border-slate-300 p-3 rounded-xl">

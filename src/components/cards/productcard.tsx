@@ -14,7 +14,7 @@ const ProductCard = ({ p }: { p: TProduct }) => {
           </span>
 
           <div className="min-w-0 flex-1">
-            <h2 className="break-words text-sm font-bold leading-6 text-slate-800 sm:text-base">
+            <h2 className="wrap-break-word text-sm font-bold leading-6 text-slate-800 sm:text-base">
               {p.nameBn}
             </h2>
 
@@ -26,7 +26,7 @@ const ProductCard = ({ p }: { p: TProduct }) => {
           <div className="min-w-0">
             <p className="text-xs text-slate-500">আজকের দাম</p>
 
-            <p className="mt-1 break-words text-lg font-extrabold text-slate-900 sm:text-xl">
+            <p className="mt-1 wrap-break-word text-lg font-extrabold text-slate-900 sm:text-xl">
               {p.today.toLocaleString("bn-BD")}
               <span className="ml-1 text-xs font-normal text-slate-500">
                 টাকা

@@ -18,7 +18,7 @@ const TopHeader = ({ category, singleCategoryProducts }: TTopHeaderProps) => {
             {category.nameBn}
           </h1>
 
-          <small className="block break-words text-slate-500">
+          <small className="block wrap-break-word text-slate-500">
             {singleCategoryProducts.length.toLocaleString("bn-BD")} টি পণ্যের
             আজকের দাম ও পরিবর্তন
           </small>

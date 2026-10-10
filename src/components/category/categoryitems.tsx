@@ -30,7 +30,7 @@ const CategoryItems = ({ singleCategoryProducts }: TTopHeaderProps) => {
   // Empty state
   if (singleCategoryProducts.length === 0) {
     return (
-      <div className="mx-auto flex min-h-[350px] w-full max-w-[1280px] items-center justify-center px-4 py-12 sm:px-6">
+      <div className="mx-auto flex min-h-85.5 w-full max-w-7xl items-center justify-center px-4 py-12 sm:px-6">
         <div className="w-full max-w-md rounded-2xl border border-dashed border-slate-300 bg-white px-5 py-10 text-center shadow-sm sm:px-8">
           <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-green-50">
             <PackageSearch size={32} className="text-[#07883f]" />
@@ -59,7 +59,7 @@ const CategoryItems = ({ singleCategoryProducts }: TTopHeaderProps) => {
   }
 
   return (
-    <div className="mx-auto w-full max-w-[1280px] min-w-0 px-3 sm:px-5">
+    <div className="mx-auto w-full max-w-7xl min-w-0 px-3 sm:px-5">
       <SortingPart sortOrder={sortOrder} setSortOrder={setSortOrder} />
 
       <p className="mb-4 text-slate-500">
