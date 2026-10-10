@@ -4,39 +4,22 @@ import AllProducts from "@/components/home/allproducts";
 import Hero from "@/components/home/hero";
 import PriceDecreased from "@/components/home/pricedecreased";
 import PriceIncreased from "@/components/home/priceincreased";
+import ProductSkeleton from "@/components/home/homeskeleton";
 
 export default function Home() {
   return (
     <div>
       <Hero />
 
-      <Suspense
-        fallback={
-          <div className="container mx-auto mt-10">
-            দাম বাড়ার তথ্য লোড হচ্ছে...
-          </div>
-        }
-      >
+      <Suspense fallback={<ProductSkeleton count={6} />}>
         <PriceIncreased />
       </Suspense>
 
-      <Suspense
-        fallback={
-          <div className="container mx-auto mt-10">
-            দাম কমার তথ্য লোড হচ্ছে...
-          </div>
-        }
-      >
+      <Suspense fallback={<ProductSkeleton count={6} />}>
         <PriceDecreased />
       </Suspense>
 
-      <Suspense
-        fallback={
-          <div className="container mx-auto mt-10">
-            পণ্যের তথ্য লোড হচ্ছে...
-          </div>
-        }
-      >
+      <Suspense fallback={<ProductSkeleton count={33} />}>
         <AllProducts />
       </Suspense>
     </div>

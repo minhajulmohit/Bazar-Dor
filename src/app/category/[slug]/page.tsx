@@ -3,6 +3,7 @@ import CategoryItems from "@/components/category/categoryitems";
 import TopHeader from "@/components/category/topheader";
 import { TNav, TProduct } from "@/types";
 import { notFound } from "next/navigation";
+import CategorySkeleton from "@/components/category/categoryskeleton";
 
 async function CategoryContent({
   params,
@@ -57,13 +58,7 @@ export default function CategoryPage({
   params: Promise<{ slug: string }>;
 }) {
   return (
-    <Suspense
-      fallback={
-        <div className="container mx-auto py-10 text-center">
-          ক্যাটাগরির পণ্য লোড হচ্ছে...
-        </div>
-      }
-    >
+    <Suspense fallback={<CategorySkeleton count={4} />}>
       <CategoryContent params={params} />
     </Suspense>
   );
