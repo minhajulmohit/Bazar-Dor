@@ -13,7 +13,7 @@ async function CategoryContent({
   const { slug } = await params;
 
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products?category=${encodeURIComponent(slug)}`,
+    `https://api.abcz.workers.dev/api/bazardor/products?category=${encodeURIComponent(slug)}`,
   );
 
   if (!res.ok) {
@@ -23,7 +23,7 @@ async function CategoryContent({
   const singleCategoryProducts: TProduct[] = await res.json();
 
   const res2 = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/categories/${encodeURIComponent(slug)}`,
+    `https://api.abcz.workers.dev/api/bazardor/categories/${encodeURIComponent(slug)}`,
   );
 
   if (res2.status === 404) {

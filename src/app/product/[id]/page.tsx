@@ -8,7 +8,7 @@ async function ProductContent({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
   const res = await fetch(
-    `https://api.api-store.workers.dev/api/bazardor/products/${encodeURIComponent(id)}`,
+    `https://api.abcz.workers.dev/api/bazardor/products/${encodeURIComponent(id)}`,
   );
 
   if (res.status === 404) {

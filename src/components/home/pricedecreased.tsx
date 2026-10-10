@@ -3,7 +3,7 @@ import ProductCard from "../cards/productcard";
 
 const PriceDecreased = async () => {
   const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
+    "https://api.abcz.workers.dev/api/bazardor/products",
   );
   const products = await res.json();
   const filterHighPriceProducts = products

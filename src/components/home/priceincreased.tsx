@@ -2,9 +2,7 @@ import { TProduct } from "@/types";
 import ProductCard from "../cards/productcard";
 
 const PriceIncreased = async () => {
-  const res = await fetch(
-    "https://api.api-store.workers.dev/api/bazardor/products",
-  );
+  const res = await fetch("https://api.abcz.workers.dev/api/bazardor/products");
   const products = await res.json();
   const filterHighPriceProducts = products
     .filter((p: TProduct) => p.change?.dir === "up")
