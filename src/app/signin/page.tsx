@@ -122,7 +122,7 @@ const SignInPage = () => {
             <span className="flex-1 h-px bg-gray-300"></span>
           </div>
 
-          <div className="flex flex-col gap-3 sm:flex-row">
+          <div className="flex flex-col gap-3">
             <button
               onClick={handleGoogleSignIn}
               className="btn w-full min-w-0 whitespace-normal bg-white text-black border-[#e5e5e5]"

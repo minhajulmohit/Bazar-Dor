@@ -105,7 +105,7 @@ const signUp = () => {
             <small className="">অথবা</small>
             <span className="flex-1 h-px bg-gray-300"></span>
           </div>
-          <div className=" flex gap-4">
+          <div className="flex flex-col gap-4">
             <button
               onClick={handleGoogleSignUp}
               className="btn w-full min-w-0 whitespace-normal bg-white text-black border-[#e5e5e5]"
