@@ -4,8 +4,11 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { authClient } from "@/lib/auth-client";
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 const NavButtons = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const { data: session, isPending } = authClient.useSession();
   const router = useRouter();
 
@@ -48,11 +51,12 @@ const NavButtons = () => {
   const firstLetter = user.name?.trim().charAt(0).toUpperCase() || "U";
 
   return (
-    <div className="dropdown dropdown-end">
+    <div className="relative">
       <button
         type="button"
-        tabIndex={0}
+        onClick={() => setIsOpen((prev) => !prev)}
         aria-label="ব্যবহারকারীর মেনু"
+        aria-expanded={isOpen}
         className="flex max-w-[150px] items-center gap-2 rounded-full p-1 transition hover:bg-slate-100 sm:max-w-[220px] sm:pr-3"
       >
         <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#05893E] text-base font-bold text-white">
@@ -67,8 +71,9 @@ const NavButtons = () => {
       </button>
 
       <ul
-        tabIndex={0}
-        className="dropdown-content menu z-50 mt-2 w-[min(16rem,calc(100vw-24px))] rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
+        className={`absolute right-0 top-full z-50 mt-2 w-[min(16rem,calc(100vw-24px))] rounded-xl border border-slate-200 bg-white p-2 shadow-lg ${
+          isOpen ? "block" : "hidden"
+        }`}
       >
         <li className="pointer-events-none">
           <div className="flex flex-col items-start gap-1 py-3">
@@ -84,7 +89,11 @@ const NavButtons = () => {
         <div className="divider my-0" />
 
         <li>
-          <Link href="/profile" className="py-3">
+          <Link
+            href="/profile"
+            className="py-3 "
+            onClick={() => setIsOpen(false)}
+          >
             👤 আমার প্রোফাইল
           </Link>
         </li>
