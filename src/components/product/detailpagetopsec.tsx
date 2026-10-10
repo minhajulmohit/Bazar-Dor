@@ -3,12 +3,12 @@ import { unitMap } from "../nav/navmarquee";
 
 const DetailPageTopSection = ({ product }: { product: TProduct }) => {
   return (
-    <div className="container mx-auto my-4 flex flex-col items-stretch gap-4 rounded-xl border border-slate-300 bg-white p-3 sm:my-5 sm:p-4 md:flex-row md:items-center md:justify-between">
+    <div className="mx-auto my-4 flex w-full max-w-[1280px] min-w-0 flex-col items-stretch gap-4 rounded-xl border border-slate-300 bg-white p-3 sm:my-5 sm:px-5 sm:py-4 md:flex-row md:items-center md:justify-between">
       <div className="flex min-w-0 items-center gap-2">
         <p className="text-4xl bg-[#f0f5f0] p-3 rounded-xl">{product.image}</p>
-        <div className="flex flex-col">
+        <div className="flex min-w-0 flex-1 flex-col gap-1">
           <h1 className="font-bold text-xl">{product.nameBn}</h1>
-          <small className="text-slate-500 leading-3">
+          <small className="text-slate-500 leading-3 break-words text-lg font-bold sm:text-xl">
             প্রতি {unitMap[product.unit]} • {product.categoryNameBn}
           </small>
           <small className="mt-3">

@@ -48,14 +48,14 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className="container mx-auto max-w-3xl flex flex-col justify-center my-10">
+    <div className="mx-auto flex w-full max-w-4xl min-w-0 flex-col gap-5 px-3 py-6 sm:px-5 sm:py-10">
       <div className="text-start mb-5">
         <h1 className="font-bold">আমার প্রোফাইল</h1>
         <small className="text-slate-500">
           আপনার অ্যাকাউন্টের তথ্য এখানে দেখুন
         </small>
       </div>
-      <div className="bg-white border border-slate-300 rounded-xl p-6 flex justify-between items-center">
+      <div className="flex w-full min-w-0 flex-col gap-4 rounded-xl border border-slate-300 bg-white p-4 sm:p-6 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center gap-4">
           <div className="w-20 h-20 shrink-0 rounded-full bg-[#05893E] text-white flex items-center justify-center text-3xl font-bold">
             {firstLetter}
@@ -74,13 +74,13 @@ const ProfilePage = () => {
         <button
           type="button"
           onClick={handleSignOut}
-          className="btn bg-red-600 hover:bg-red-700 text-white border-none"
+          className="btn w-full shrink-0 border-none bg-red-600 text-white hover:bg-red-700 md:w-auto"
         >
           সাইন আউট
         </button>
       </div>
 
-      <div className="mt-6 rounded-xl border border-slate-300 bg-white p-6">
+      <div className="mt-2 w-full min-w-0 rounded-xl border border-slate-300 bg-white p-4 sm:p-6">
         <h2 className="text-sm font-semibold text-gray-800 mb-6">তথ্য</h2>
 
         <form onSubmit={handleUpdateName} className="space-y-3">

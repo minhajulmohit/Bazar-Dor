@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Bengali } from "next/font/google";
+import { Suspense } from "react";
+
 import "./globals.css";
 import NavBar from "@/components/nav/navbar";
 import Footer from "@/components/footer/footer";
@@ -21,13 +23,27 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="bn"
       data-theme="light"
-      className={`${NotoSansBengali.variable} h-full antialiased`}
+      className={`${NotoSansBengali.variable} min-h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col ">
-        <NavBar />
-        <div className="bg-[#f0f5f0] pb-20"> {children}</div>
-        <Toaster position="top-right" />
-        <Footer />
+      <body className="flex min-h-screen w-full flex-col overflow-x-clip">
+        <header className="w-full min-w-0 shrink-0">
+          <NavBar />
+        </header>
+
+        <main className="min-w-0 w-full flex-1 bg-[#f0f5f0] pb-10 sm:pb-14">
+          {children}
+        </main>
+
+        <Suspense fallback={null}>
+          <Footer />
+        </Suspense>
+
+        <Toaster
+          position="top-center"
+          toastOptions={{
+            duration: 3000,
+          }}
+        />
       </body>
     </html>
   );

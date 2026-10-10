@@ -60,15 +60,15 @@ const signUp = () => {
   }
 
   return (
-    <div className="flex my-10 justify-center">
-      <form onSubmit={onSubmit}>
+    <div className="mx-auto my-6 flex w-full min-w-0 max-w-md justify-center px-3 sm:my-10 sm:px-5">
+      <form onSubmit={onSubmit} className="w-full min-w-0">
         <div className="text-center">
           <h1 className="font-extrabold text-xl ">অ্যাকাউন্ট তৈরি করুন</h1>
           <small className="text-slate-500">
             বিনা খরচে সাইন আপ করে সব বিস্তারিত দাম দেখুন।
           </small>
         </div>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
+        <fieldset className="fieldset w-full min-w-0 rounded-box border border-base-300 bg-base-200 p-3 sm:p-5">
           <legend className="fieldset-legend">সাইন আপ</legend>
 
           <label className="label">নাম</label>
@@ -96,11 +96,11 @@ const signUp = () => {
 
           <button
             type="submit"
-            className="btn bg-[#05893E] py-1 my-2 px-2 rounded-[5px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_15px_#05893E]"
+            className="btn w-full bg-[#05893E] py-1 my-2 px-2 rounded-[5px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_15px_#05893E]"
           >
             অ্যাকাউন্ট তৈরি করুন
           </button>
-          <div className="flex items-center gap-3 my-1">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <span className="flex-1 h-px bg-gray-300"></span>
             <small className="">অথবা</small>
             <span className="flex-1 h-px bg-gray-300"></span>
@@ -108,7 +108,7 @@ const signUp = () => {
           <div className=" flex gap-4">
             <button
               onClick={handleGoogleSignUp}
-              className="btn bg-white text-black border-[#e5e5e5]"
+              className="btn w-full min-w-0 whitespace-normal bg-white text-black border-[#e5e5e5]"
             >
               <svg
                 aria-label="Google logo"
@@ -141,7 +141,7 @@ const signUp = () => {
             </button>
             <button
               onClick={handleGithubSignUp}
-              className="btn bg-black text-white border-black"
+              className="btn w-full min-w-0 whitespace-normal bg-black text-white border-black"
             >
               <svg
                 aria-label="GitHub logo"

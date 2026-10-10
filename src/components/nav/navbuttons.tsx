@@ -9,80 +9,92 @@ const NavButtons = () => {
   const router = useRouter();
 
   const handleSignOut = async () => {
-    await authClient.signOut();
+    const { error } = await authClient.signOut();
+
+    if (error) return;
+
     router.push("/signin");
     router.refresh();
   };
 
   if (isPending) {
-    return <div className="w-20" />;
+    return (
+      <div className="h-9 w-16 animate-pulse rounded-md bg-slate-100 sm:w-24" />
+    );
   }
 
   if (!session?.user) {
     return (
-      <div className="flex shrink-0 items-center gap-1 sm:gap-2">
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
         <Link
           href="/signin"
-          className="whitespace-nowrap rounded-md px-2 py-1.5 text-xs sm:px-3 sm:py-2 sm:text-sm transition-all duration-300 hover:-translate-y-0.5"
+          className="whitespace-nowrap rounded-lg px-2 py-2 text-xs font-semibold text-slate-700 transition hover:bg-slate-100 sm:px-3 sm:text-sm"
         >
-          <small>সাইন ইন</small>
+          সাইন ইন
         </Link>
 
         <Link
           href="/signup"
-          className="bg-[#05893E] whitespace-nowrap rounded-md px-2 py-1.5 text-xs sm:px-3 sm:py-2 sm:text-sm text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_2px_15px_#05893E]"
+          className="whitespace-nowrap rounded-lg bg-[#05893E] px-2.5 py-2 text-xs font-semibold text-white transition hover:bg-[#046d32] sm:px-4 sm:text-sm"
         >
-          <small>সাইন আপ</small>
+          সাইন আপ
         </Link>
       </div>
     );
   }
 
   const user = session.user;
-  const firstLetter = user.name?.trim().charAt(0).toUpperCase();
+  const firstLetter = user.name?.trim().charAt(0).toUpperCase() || "U";
 
   return (
     <div className="dropdown dropdown-end">
       <button
         type="button"
         tabIndex={0}
-        className="flex items-center gap-2 rounded-full hover:bg-base-200 p-1 pr-3 transition-all duration-200"
+        aria-label="ব্যবহারকারীর মেনু"
+        className="flex max-w-[150px] items-center gap-2 rounded-full p-1 transition hover:bg-slate-100 sm:max-w-[220px] sm:pr-3"
       >
-        <span className="flex items-center justify-center w-9 h-9 rounded-full bg-[#05893E] text-white font-bold text-lg">
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#05893E] text-base font-bold text-white">
           {firstLetter}
         </span>
-        <span className="font-medium max-w-32 truncate">{user.name}</span>
+
+        <span className="hidden max-w-28 truncate text-sm font-medium sm:block">
+          {user.name}
+        </span>
+
         <span className="text-xs">▼</span>
       </button>
+
       <ul
         tabIndex={0}
-        className="dropdown-content menu bg-base-100 rounded-xl z-50 mt-3 w-64 p-2 shadow-lg border border-base-300"
+        className="dropdown-content menu z-50 mt-2 w-[min(16rem,calc(100vw-24px))] rounded-xl border border-slate-200 bg-white p-2 shadow-lg"
       >
         <li className="pointer-events-none">
           <div className="flex flex-col items-start gap-1 py-3">
-            <span className="font-bold text-base text-base-content">
+            <span className="max-w-full break-words font-bold text-slate-800">
               {user.name}
             </span>
-            <span className="text-xs text-base-content/60 break-all">
+            <span className="max-w-full break-all text-xs text-slate-500">
               {user.email}
             </span>
           </div>
         </li>
+
         <div className="divider my-0" />
+
         <li>
           <Link href="/profile" className="py-3">
-            <span>👤</span>
-            আমার প্রোফাইল
+            👤 আমার প্রোফাইল
           </Link>
         </li>
+
         <li>
           <button
             type="button"
             onClick={handleSignOut}
             className="py-3 text-red-600 hover:bg-red-50"
           >
-            <span>↩</span>
-            Sign Out
+            ↩ সাইন আউট
           </button>
         </li>
       </ul>

@@ -3,43 +3,45 @@ import { unitMap } from "../nav/navmarquee";
 import Link from "next/link";
 
 const ProductCard = ({ p }: { p: TProduct }) => {
+  const unit = unitMap[p.unit] ?? p.unit;
+
   return (
     <Link href={`/product/${p.id}`} className="block h-full min-w-0">
-      <div className="h-full min-w-0 rounded-xl border border-slate-300 bg-white p-2 transition hover:shadow-md sm:p-3">
-        <div className="flex min-w-0 items-center gap-2">
-          <p className="shrink-0 rounded-lg bg-[#f0f5f0] p-1 text-xl sm:text-2xl">
+      <article className="flex h-full min-w-0 flex-col rounded-xl border border-slate-200 bg-white p-3 transition duration-200 hover:border-[#05893E]/40 hover:shadow-md sm:p-4">
+        <div className="flex min-w-0 items-center gap-2.5">
+          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#f0f5f0] text-xl sm:h-12 sm:w-12 sm:text-2xl">
             {p.image}
-          </p>
+          </span>
 
           <div className="min-w-0 flex-1">
-            <p className="wrap-break-word text-sm font-bold sm:text-base">
+            <h2 className="break-words text-sm font-bold leading-6 text-slate-800 sm:text-base">
               {p.nameBn}
-            </p>
+            </h2>
 
-            <small className="text-[10px] text-slate-500 sm:text-[11px]">
-              প্রতি {unitMap[p.unit]}
-            </small>
+            <p className="mt-0.5 text-xs text-slate-500">প্রতি {unit}</p>
           </div>
         </div>
 
-        <small className="mt-2 block text-[10px] sm:text-[11px]">
-          আজকের দাম
-        </small>
+        <div className="mt-4 flex min-w-0 flex-wrap items-end justify-between gap-2">
+          <div className="min-w-0">
+            <p className="text-xs text-slate-500">আজকের দাম</p>
 
-        <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
-          <p className="text-lg font-bold sm:text-xl">
-            {p.today.toLocaleString("bn-BD")}{" "}
-            <span className="text-[10px] font-normal sm:text-[11px]">টাকা</span>
-          </p>
+            <p className="mt-1 break-words text-lg font-extrabold text-slate-900 sm:text-xl">
+              {p.today.toLocaleString("bn-BD")}
+              <span className="ml-1 text-xs font-normal text-slate-500">
+                টাকা
+              </span>
+            </p>
+          </div>
 
-          <p className="rounded-full bg-[#f0f5f0] px-2 text-[10px] sm:text-xs">
+          <span className="shrink-0 rounded-full bg-[#f0f5f0] px-2 py-1 text-xs">
             <span
               className={
                 p.change?.dir === "up"
-                  ? "text-red-600"
+                  ? "font-semibold text-red-600"
                   : p.change?.dir === "down"
-                    ? "text-green-600"
-                    : "font-extrabold text-gray-500"
+                    ? "font-semibold text-green-600"
+                    : "font-semibold text-slate-500"
               }
             >
               {p.change?.dir === "up"
@@ -49,9 +51,9 @@ const ProductCard = ({ p }: { p: TProduct }) => {
                   : "—"}{" "}
               {Math.abs(p.change?.pct ?? 0).toLocaleString("bn-BD")}%
             </span>
-          </p>
+          </span>
         </div>
-      </div>
+      </article>
     </Link>
   );
 };

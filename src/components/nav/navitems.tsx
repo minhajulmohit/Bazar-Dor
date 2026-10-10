@@ -1,4 +1,5 @@
 "use client";
+
 import { TNav } from "@/types";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -10,37 +11,51 @@ const NavItems = () => {
 
   useEffect(() => {
     const loadCategories = async () => {
-      const res = await fetch(
-        "https://api.api-store.workers.dev/api/bazardor/categories",
-      );
-      const data = await res.json();
-      setNavItems(data);
+      try {
+        const res = await fetch(
+          "https://api.api-store.workers.dev/api/bazardor/categories",
+        );
+
+        if (!res.ok) {
+          throw new Error("Categories could not be loaded");
+        }
+
+        const data: TNav[] = await res.json();
+        setNavItems(data);
+      } catch (error) {
+        console.error("Category loading error:", error);
+      }
     };
 
     loadCategories();
   }, []);
 
   return (
-    <div className="flex items-center gap-2 overflow-x-auto border-y border-y-slate-200 px-3 py-2 sm:justify-center sm:gap-3">
-      {navItems.map((n: TNav) => {
-        const isActive = pathname === `/category/${n.slug}`;
+    <nav
+      aria-label="পণ্যের ক্যাটাগরি"
+      className="w-full min-w-0 border-y border-slate-200 bg-white"
+    >
+      <div className="mx-auto flex w-full max-w-[1280px] min-w-0 items-center gap-2 overflow-x-auto px-3 py-2 sm:justify-center sm:gap-3 sm:px-5">
+        {navItems.map((item) => {
+          const isActive = pathname === `/category/${item.slug}`;
 
-        return (
-          <Link
-            key={n.slug}
-            href={`/category/${n.slug}`}
-            className={`shrink-0 whitespace-nowrap px-3 py-2 text-sm rounded-lg transition-colors ${
-              isActive
-                ? "bg-green-600 text-primary-content font-bold"
-                : "hover:bg-base-200"
-            }`}
-          >
-            {n.icon}
-            {n.nameBn}
-          </Link>
-        );
-      })}
-    </div>
+          return (
+            <Link
+              key={item.slug}
+              href={`/category/${item.slug}`}
+              className={`flex shrink-0 items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs transition-colors sm:text-sm ${
+                isActive
+                  ? "bg-[#05893E] font-bold text-white"
+                  : "text-slate-700 hover:bg-slate-100"
+              }`}
+            >
+              <span>{item.icon}</span>
+              <span>{item.nameBn}</span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
   );
 };
 

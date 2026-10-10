@@ -4,14 +4,14 @@ import HeroImage from "@/app/bazar-hero.png";
 
 const Hero = () => {
   return (
-    <section className="container mx-auto px-3 sm:px-4">
-      <div className="my-5 sm:my-10 flex flex-col md:flex-row items-center justify-between gap-5 rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 md:p-8">
+    <section className="mx-auto w-full max-w-7xl min-w-0 px-3 sm:px-5">
+      <div className="my-5 flex min-w-0 flex-col items-center gap-5 rounded-2xl border border-slate-200 bg-white p-4 sm:my-8 sm:p-6 md:flex-row md:justify-between md:p-8">
         <div className="flex min-w-0 w-full flex-col items-start gap-4 sm:gap-6">
           <small className="rounded-full bg-[#05893E20] px-2 py-1 text-[#05893E]">
             <Date />
           </small>
 
-          <h1 className="text-2xl font-extrabold sm:text-3xl lg:text-4xl">
+          <h1 className="text-2xl font-extrabold leading-snug sm:text-3xl lg:text-4xl">
             আজকের বাজারের <span className="text-[#05893E]">দাম</span> এক নজরে
           </h1>
 
@@ -30,7 +30,7 @@ const Hero = () => {
 
         <div className="flex w-full shrink-0 justify-center md:w-auto">
           <Image
-            className="h-auto w-40 object-contain sm:w-52 md:w-60"
+            className="h-auto w-full max-w-[180px] object-contain sm:max-w-[220px] md:max-w-[260px]"
             src={HeroImage}
             alt="বাজারের পণ্য"
             priority

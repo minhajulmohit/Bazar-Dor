@@ -83,15 +83,15 @@ const SignInPage = () => {
   }
 
   return (
-    <div className="flex my-10 justify-center">
-      <form onSubmit={onSubmit}>
-        <div className="text-center">
+    <div className="mx-auto my-6 flex w-full min-w-0 max-w-md justify-center px-3 sm:my-10 sm:px-5">
+      <form onSubmit={onSubmit} className="w-full min-w-0">
+        <div className="text-center w-full rounded-xl p-4 sm:p-6">
           <h1 className="font-extrabold text-xl ">সাইন ইন করুন</h1>
           <small className="text-slate-500">
             বিস্তারিত দাম, বাজার তুলনা ও প্রোফাইল দেখতে অ্যাকাউন্টে ঢুকুন।
           </small>
         </div>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
+        <fieldset className="fieldset w-full min-w-0 rounded-box border border-base-300 bg-base-200 p-3 sm:p-5">
           <legend className="fieldset-legend">সাইন ইন</legend>
 
           <label className="label">ইমেইল</label>
@@ -122,10 +122,10 @@ const SignInPage = () => {
             <span className="flex-1 h-px bg-gray-300"></span>
           </div>
 
-          <div className=" flex gap-4">
+          <div className="flex flex-col gap-3 sm:flex-row">
             <button
               onClick={handleGoogleSignIn}
-              className="btn bg-white text-black border-[#e5e5e5]"
+              className="btn w-full min-w-0 whitespace-normal bg-white text-black border-[#e5e5e5]"
             >
               <svg
                 aria-label="Google logo"
@@ -158,7 +158,7 @@ const SignInPage = () => {
             </button>
             <button
               onClick={handleGithubSignIn}
-              className="btn bg-black text-white border-black"
+              className="btn w-full min-w-0 whitespace-normal bg-black text-white border-black"
             >
               <svg
                 aria-label="GitHub logo"

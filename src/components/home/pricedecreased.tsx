@@ -16,7 +16,7 @@ const PriceDecreased = async () => {
       <h1 className="font-extrabold text-xl mb-3">
         <span className="text-green-600">▼</span> আজ দাম কমেছে
       </h1>
-      <div className="grid grid-cols-1 min-[400px]:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
+      <div className="grid grid-cols-1 min-[360px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
         {filterHighPriceProducts.map((p: TProduct) => (
           <div key={p.id}>
             <ProductCard p={p} />

@@ -1,21 +1,65 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
+  width: 100%;
   min-width: 320px;
+  overflow-x: clip;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
 }
 
 img,
 video {
+  height: auto;
+}
+
+main,
+section,
+header,
+footer,
+nav,
+article,
+aside {
+  min-width: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 374px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+.table-scroll {
+  width: 100%;
   max-width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
 }
