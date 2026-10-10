@@ -10,7 +10,7 @@ export default function NotFound() {
           <div className="flex w-full flex-col items-center justify-center md:w-1/2">
             <div className="relative flex items-center justify-center">
               <span className="text-[140px] font-black leading-none tracking-tighter text-[#05893E] sm:text-[190px]">
-                404
+                ৪০৪
               </span>
             </div>
 
