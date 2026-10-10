@@ -8,7 +8,7 @@ const DetailPageTopSection = ({ product }: { product: TProduct }) => {
         <p className="text-4xl bg-[#f0f5f0] p-3 rounded-xl">{product.image}</p>
         <div className="flex min-w-0 flex-1 flex-col gap-1">
           <h1 className="font-bold text-xl">{product.nameBn}</h1>
-          <small className="text-slate-500 leading-3 break-words text-lg font-bold sm:text-xl">
+          <small className="text-slate-500 leading-3 text-[12px]font-bold">
             প্রতি {unitMap[product.unit]} • {product.categoryNameBn}
           </small>
           <small className="mt-3">
